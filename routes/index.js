@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var WorkController=('../controllers/workController');
-var service = require('../models/service');
+var WorkController=('../controllers/WorkController');
 // Get Homepage
 /*router.get('/', function(req, res){
 	User.find({}, function(err, items) {
@@ -10,7 +9,7 @@ var service = require('../models/service');
 		});
 });
 */
-router.get('/sortbyprice', WorkController.CompareByPriceAssc(req,res);
+router.post('/service', WorkController.CompareByPriceAssc);
 
 
 

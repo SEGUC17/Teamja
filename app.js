@@ -6,7 +6,7 @@ var expressValidator = require('express-validator');
 var session = require('express-session');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-
+var router = express.Router();
 mongoose.connect('mongodb://localhost/service');
 var db = mongoose.connection;
 
@@ -34,8 +34,8 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
-app.use('/', routes);
-app.use('/service', service);
+app.use(router);
+
 //app.use('/projects', projects);
 
 // Set Port
