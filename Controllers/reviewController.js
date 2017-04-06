@@ -20,11 +20,18 @@ addReview:function(req, res){
 		});
 
 		req.flash('success_msg', 'You added a new review');
-		res.redirect('reviewrate');
+		res.redirect('/getRev');
 		
 
 	}
-    }
+    },
+    	getAllReviews :function (req,res){
+		Review.find(function(err,reviewArrays){
+			if (err) res.send(err.message);
+			else res.render('reviews', {reviewArrays});
+		
+	})
+}
 }
 
 

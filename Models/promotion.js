@@ -6,7 +6,7 @@ var promotionSchema = mongoose.Schema({
        
         index:true
     },
-    UserName:{type: mongoose.Schema.Types.ObjectId, ref: 'Company'}
+    UserName:String
 })
 var Promotion = module.exports = mongoose.model('Promotion', promotionSchema);
 

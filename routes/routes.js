@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 var deletefunc = require('../Controllers/delete.js');
 var update = require('../Controllers/update.js');
-var EventController=require ('../Controllers/EventsController');
-var RatingsController=require ('../Controllers/RatingsController');
-var ReviewsController=require ('../Controllers/ReviewsController');
+
 var WorkController= require ('../Controllers/WorkController');
 var CompanyController = require ('../Controllers/CompanyController');
 var promotionController = require('../controllers/promotionController');
@@ -21,6 +19,11 @@ router.get('/reviewrate', function(req, res){
 	res.render('reviewrate');
 });
 
+router.get('/getall',promotionController.getAllPromotions);
+
+router.get('/getRev',reviewController.getAllReviews);
+
+router.get('/getrates',ratingController.getAllRatings);
 
 router.post('/promote', promotionController.createPromotion);
 	  
