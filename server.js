@@ -14,6 +14,8 @@ var events = require('./routes/events');
 var ratings= require('./routes/ratings');
 var service = require('./routes/service');
 
+var routes = require('./routes/routes');
+
 // Init App
 var app = express();
 
