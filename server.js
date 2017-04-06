@@ -52,6 +52,8 @@ app.use('/', routes);
 app.use('/events', events);
 app.use('/ratings', ratings);
 
+app.use(router); //injy
+
 // Set Port
 app.set('port', (process.env.PORT || 3000));
 
