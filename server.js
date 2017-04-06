@@ -12,6 +12,7 @@ var db = mongoose.connection;
 var routes = require('./routes/index');
 var events = require('./routes/events');
 var ratings= require('./routes/ratings');
+var service = require('./routes/service');
 
 // Init App
 var app = express();
@@ -49,14 +50,13 @@ app.use(expressValidator({
 }));
 
 app.use('/', routes);
+app.use('/', service);
 app.use('/events', events);
 app.use('/ratings', ratings);
-
-app.use(router); //injy
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));
 
 app.listen(app.get('port'), function(){
-	console.log('Server started on port '+app.get('port'));
+  console.log('Server started on port '+app.get('port'));
 });
