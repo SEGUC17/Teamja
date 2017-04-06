@@ -12,10 +12,15 @@
     "body-parser": "*",
     "express": "*",
     "express-handlebars": "*",
+     "bcryptjs": "^2.4.3",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+     "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "mongodb": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0"
 }
 }
