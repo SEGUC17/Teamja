@@ -13,6 +13,20 @@ var User = require('../models/user');
 
 
 router.get('/', function(req, res){
+
+	res.render('register');
+}
+);
+/*router.post('/work', function(req, res){
+
+	res.render('work');
+}*/
+router.post('/register', CompanyController.createCompany);
+
+router.post('/re', WorkController.createWork);
+
+
+router.get('/', function(req, res){
 	console.log('ana fel partenerdcompany');
 	res.render('index');
 });
