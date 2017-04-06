@@ -8,6 +8,8 @@ var CompanyController = require ('../Controllers/CompanyController');
 var promotionController = require('../controllers/promotionController');
 var ratingController = require('../controllers/ratingController');
 var reviewController = require('../controllers/reviewController');
+var User = require('../models/user');
+
 
 
 router.get('/', function(req, res){
@@ -24,6 +26,7 @@ router.get('/getall',promotionController.getAllPromotions);
 router.get('/getRev',reviewController.getAllReviews);
 
 router.get('/getrates',ratingController.getAllRatings);
+
 
 router.post('/promote', promotionController.createPromotion);
 	  
@@ -59,6 +62,31 @@ router.post('/', ReviewsController.getAllReviews);
 router.post('/', WorkController.CompareByPriceAssc);
 router.post('/search',CompanyController.search);
 
+router.get('/', ensureAuthenticated, function(req, res){
+    res.render('index');
+router.get('/login', function(req, res){
+    res.render('login');
+});
+router.post('/login',
+  passport.authenticate('local', {successRedirect:'/', failureRedirect:'/users/login',failureFlash: true}),
+  function(req, res) {
+    res.redirect('/');
+  });
+  router.get('/logout', function(req, res){
+    req.logout();
+
+    req.flash('success_msg', 'You are logged out');
+
+    res.redirect('/users/login');
+});
+function ensureAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    } else {
+        //req.flash('error_msg','You are not logged in');
+        res.redirect('/users/login');
+    }
+}
 
 
 
