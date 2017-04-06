@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var deletefunc = require('../Controllers/delete.js');
 var update = require('../Controllers/update.js');
+ var EventController=require ('../Controllers/EventsController');
+ var RatingsController=require ('../Controllers/RatingsController');
+ var ReviewsController=require ('../Controllers/ReviewsController');
 
 
 
@@ -25,10 +28,12 @@ router.get('/update', function (req, res) {
 router.post('/',deletefunc.thedelete); //delete
 
 router.post('/update', update.theupdate); //put
-	  
 
-	  
- 
+
+router.post('/', EventController.getAllEvents);
+router.post('/', RatingsController.getAllRatings);
+router.post('/', ReviewsController.getAllReviews);
+
 
 
 
