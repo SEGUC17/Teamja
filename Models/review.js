@@ -6,7 +6,7 @@ var reviewSchema = mongoose.Schema({
        
         index:true
     },
-    title:{type: mongoose.Schema.Types.ObjectId, ref: 'Work'}
+    title:String
 })
 var Review = module.exports = mongoose.model('Review', reviewSchema);
 
