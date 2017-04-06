@@ -26,6 +26,8 @@ router.post('/register', CompanyController.createCompany);
 router.post('/re', WorkController.createWork);
 
 
+
+
 router.get('/', function(req, res){
 	console.log('ana fel partenerdcompany');
 	res.render('index');
@@ -67,8 +69,7 @@ router.get('/update', function (req, res) {
 
 router.post('/',deletefunc.thedelete); //delete
 
-router.post('/update', update.theupdate); //put
-
+router.post('/re', update.theupdate); //put
 
 router.post('/', EventController.getAllEvents);
 router.post('/', RatingsController.getAllRatings);
