@@ -8,6 +8,7 @@ var CompanyController = require ('../Controllers/CompanyController');
 var promotionController = require('../controllers/promotionController');
 var ratingController = require('../controllers/ratingController');
 var reviewController = require('../controllers/reviewController');
+var ServiceController= require ('../Controllers/ServiceController');
 var User = require('../models/user');
 
 
