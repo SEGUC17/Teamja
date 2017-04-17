@@ -1,16 +1,17 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var promotionSchema = mongoose.Schema({
-    title:{
+    Title:{
         type:String,
        
         index:true
     },
-    username: String
+    UserName:String,
+    Company_id:{type:mongoose.Schema.Types.ObjectId, ref:'Company'}
 })
-var Promotion = module.exports = mongoose.model('Promotion', promotionSchema);
+var promotion =  mongoose.model('promotions', promotionSchema);
 
-
+module.exports = promotion;				
  
 
 

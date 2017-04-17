@@ -1,27 +1,47 @@
 var Review = require('../models/review');
+let Work = require('../models/Work');
 let reviewController = {
 
 addReview:function(req, res){
-    console.log('dakhalt el add review');
-	var review = req.body.review;
-	
-	req.checkBody('review', 'Review is required').notEmpty();
-	var errors = req.validationErrors();
-		if(errors){
-		res.render('reviewrate',{
-			errors:errors
-		});
-	} else {
-		var newReview = new Review({
-			review: review
-		});
+       let   trial = new  Review();
+    
+         var Title= req.body.title;
+ trial.Review = req.body.review;
+   // trial.img.data = fs.readFileSync(req.files.userPhoto.path)
 
-		req.flash('success_msg', 'You added a new review');
-		res.redirect('reviewrate');
+
+Work.findOne( {Title:Title},function(err, work){
+            trial.Work_id=work.id;
+         
+      
+
+
+              trial.save(function(err, promotion){
+            if(err){
+                res.send(err.message)
+                console.log(err);
+            }
+           else{
+      console.log(trial);
+          
+	    req.flash('success_msg', 'You added a new promotion');
+		res.redirect('/getRev'); 
+                
+               
+            }
+              
+        })   });
+    },
+
+
+    	getAllReviews :function (req,res){
+		Review.find(function(err,reviewArrays){
+			if (err) res.send(err.message);
+			else res.render('reviews', {reviewArrays});
 		
-
-	}
-    }
+	})
 }
+}
+
 
 module.exports = reviewController;

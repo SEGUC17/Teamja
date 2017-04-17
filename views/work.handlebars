@@ -1,0 +1,23 @@
+<h2 class="page-header">Register</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/index">
+   <div class="form-group">
+    <label>title</label>
+    <input type="text" class="form-control" placeholder=title" name="title">
+  </div>
+ 
+   <div class="form-group">
+    <label>VideoUrl</label>
+    <input type="text" class="form-control" placeholder="VideoUrl" name="VideoUrl">
+  </div>
+ 
+  <div class="form-group">
+    <label>price</label>
+    <input type="text" class="form-control" placeholder="price" name="price"
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
