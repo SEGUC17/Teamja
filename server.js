@@ -12,6 +12,7 @@ var db = mongoose.connection;
 var routes = require('./routes/index');
 var events = require('./routes/events');
 var ratings= require('./routes/ratings');
+
 var service = require('./routes/service');
 
 var routes = require('./routes/routes');
@@ -55,6 +56,7 @@ app.use('/', routes);
 app.use('/', service);
 app.use('/events', events);
 app.use('/ratings', ratings);
+app.use('/', service);
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));

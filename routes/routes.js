@@ -8,7 +8,7 @@ var CompanyController = require ('../Controllers/CompanyController');
 var promotionController = require('../controllers/promotionController');
 var ratingController = require('../controllers/ratingController');
 var reviewController = require('../controllers/reviewController');
-var ServiceController= require ('../Controllers/ServiceController');
+var SController= require ('../controllers/ServiceController');
 var User = require('../models/user');
 
 
@@ -50,6 +50,8 @@ router.post('/promote', promotionController.createPromotion);
 router.post('/review',reviewController.addReview);
 	  
 router.post('/rate', ratingController.addRating);
+
+router.get('/service', SController.CompareByPriceAssc);
 
 router.get('/', function (req, res) {
     res.render('page');
