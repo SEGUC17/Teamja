@@ -30,7 +30,8 @@ Company.findOne( {Username:User},function(err, company){
             }
            else{
       console.log(trial);
-            res.render('index');
+      res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));
+            //res.render('index');
 
                 
                

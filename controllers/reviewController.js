@@ -7,7 +7,7 @@ addReview:function(req, res){
     
          var Title= req.body.title;
  trial.Review = req.body.review;
-   // trial.img.data = fs.readFileSync(req.files.userPhoto.path)
+   
 
 
 Work.findOne( {Title:Title},function(err, work){
@@ -37,7 +37,9 @@ Work.findOne( {Title:Title},function(err, work){
     	getAllReviews :function (req,res){
 		Review.find(function(err,reviewArrays){
 			if (err) res.send(err.message);
-			else res.render('reviews', {reviewArrays});
+			else 
+        res.sendFile(path.join(__dirname, '../', 'views', 'reviews.html',{reviewArrays}));
+        //res.render('reviews', {reviewArrays});
 		
 	})
 }

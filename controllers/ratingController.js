@@ -40,7 +40,9 @@ Work.findOne( {Title:Title},function(err, work){
     getAllRatings :function (req,res){
 		Rating.find(function(err,ratingArrays){
 			if (err) res.send(err.message);
-			else res.render('rates', {ratingArrays});
+			else 
+        res.sendFile(path.join(__dirname, '../', 'views', 'rates.html',{ratingArrays}));
+        //res.render('rates', {ratingArrays});
 		
 	})
 }

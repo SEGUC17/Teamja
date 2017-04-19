@@ -35,40 +35,14 @@ Company.findOne( {Username:User},function(err, company){
               
         })   });
     },
-/*
-createPromotion:function(req, res){
-    console.log('dakhalt el add promotion');
-	var username = req.session.Username;
-	var title = req.body.title;
- var id=0;
-Company.findOne( {Username:username},function(err, company){
-          var id=company.id;
 
-            });
-               
-		var errors = req.validationErrors();
-		if(errors){
-		res.render('index',{
-			errors:errors
-		});
-	} else {
-		var newPromotion = new promotion({
-			title: title,
-			UserName: username,
-			Company_id:id,
-
-		});
-		console.log(newPromotion);
-
-		req.flash('success_msg', 'You added a new promotion');
-		res.redirect('/getall'); 
-    }
-},*/
 getAllPromotions :function (req,res){
 		promotion.find().sort({title: 1}).find(function(err,promotionArrays){
 			console.log(promotionArrays);
 			if (err) res.send(err.message);
-			else res.render('promotion', {promotionArrays});
+			else 
+				res.sendFile(path.join(__dirname, '../', 'views', 'promotion.html',{promotionArrays}));
+				//res.render('promotion', {promotionArrays});
 
 		
 	})

@@ -1,5 +1,5 @@
 var express = require('express');
-
+var path = require('path');
 var router = express.Router();
 var promotionController = require('../controllers/promotionController');
 var ratingController = require('../controllers/ratingController');
@@ -11,15 +11,18 @@ var WorkController =require('../controllers/WorkController');
 
 router.get('/', function(req, res){
 	console.log('ana fel register');
-	res.render('register');
+	res.sendFile(path.join(__dirname, '../', 'views', 'index.html'));
+	//res.render('register');
 });
 router.post('/work', function(req, res){
-	res.render('work');
+	res.sendFile(path.join(__dirname, '../', 'views', 'work.html'));
+	//res.render('work');
 });
 
 router.get('/reviewrate', function(req, res){
+	res.sendFile(path.join(__dirname, '../', 'views', 'reviewrate.html'));
 
-	res.render('reviewrate');
+	//res.render('reviewrate');
 });
 
 router.post('/register', CompanyController.createCompany);
@@ -37,6 +40,7 @@ router.post('/promote', promotionController.createPromotion);
 router.post('/review',reviewController.addReview);
 	  
 router.post('/rate', ratingController.addRating);
+
 
 
 module.exports = router;
