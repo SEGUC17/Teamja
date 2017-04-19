@@ -1,6 +1,5 @@
-Stripe+Node+Bootstrap
+Payment
 =====================
-An example app for accepting stripe payments with nodejs. Includes a sample bootstrap form. This app is for educational purposes only.
 
 ##Prerequisites
 * nodejs
@@ -20,8 +19,6 @@ open http://localhost:3000
 Test credit card number can be found here:
 https://stripe.com/docs/testing#cards
 
-##Screenshot
-![Alt text](/screenshot.png?raw=true)
 
 
 ##License
