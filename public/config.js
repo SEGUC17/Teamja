@@ -27,4 +27,12 @@
 
 
                 })
+.state('compare', {
+                url: "/service",
+                templateUrl: "views/compare.html",
+                controller: "CompareController"
+            })
+
+
+                })
 }());
