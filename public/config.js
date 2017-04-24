@@ -35,4 +35,10 @@
 
 
                 })
+.state('updating', {
+                url: "/update",
+                templateUrl: "views/firstview.html",
+                controller: "AppCtrl"
+            })
+
 }());
