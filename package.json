@@ -8,14 +8,15 @@
   },
   "author": "",
   "license": "ISC",
-    "dependencies": {
+  "dependencies": {
     "body-parser": "*",
     "express": "*",
     "express-handlebars": "*",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "mongodb": "*",
-    "mongoose": "*"
+    "mongodb": "^2.2.26",
+    "mongoose": "*",
+     "angular": "^1.6.4"
   }
 }

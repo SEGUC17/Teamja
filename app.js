@@ -1,46 +1,47 @@
+//require depenciess
+
 var express = require('express');
-var path = require('path');
+var router = require('./app/routes');
 var bodyParser = require('body-parser');
-var exphbs = require('express-handlebars');
-var expressValidator = require('express-validator');
-var session = require('express-session');
-var mongo = require('mongodb');
 var mongoose = require('mongoose');
-var router = express.Router();
-mongoose.connect('mongodb://localhost/service');
-var db = mongoose.connection;
-
-var routes = require('./routes/index');
-var service = require('./routes/service');
-
-
-// Init App
+//var DB_URI = "mongodb://localhost:27017/portfolio";
+var DB_URI = "mongodb://localhost/portfolio";
+var Session = require('express-session');
+//var fs = require('file-system');
 var app = express();
+//var multer = require('multer');
+//var upload = multer(); 
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// BodyParser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use( express.static(__dirname + "/public" ));
+app.use('/node_modules', express.static(__dirname + "/node_modules"));
 
 
-// Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Express Session
-app.use(session({
-    secret: 'secret',
-    saveUninitialized: true,
-    resave: true
-}));
+app.get('/', function(req, res){
+    res.sendfile('./public/index.html');
+});
+//app.use('/node_modules', express.static(__dirname + "/node_modules"));
+//app.use('/public/controllers', express.static(__dirname + "/public/controllers" ));
+
+
+//app.use('/uploads', express.static(__dirname + "/uploads"));
+// configure app
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+mongoose.connect(DB_URI);
+app.use(Session({secret: 'mySecretKey'}));
+
 app.use(router);
 
-//app.use('/projects', projects);
+/*app.use(multer({ dest: './images'}),
+ rename: function (fieldname, filename) {
+   return filename;
+ },*/
 
-// Set Port
-app.set('port', (process.env.PORT || 3000));
-
-app.listen(app.get('port'), function(){
-	console.log('Server started on port '+app.get('port'));
-});
+// start the server
+app.listen(3000, function(){
+    console.log("server is listening on port 3000");
+})

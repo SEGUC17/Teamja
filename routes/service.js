@@ -1,7 +1,11 @@
-var express = require('express');
+/*var express = require('express');
 var router = express.Router();
+var ServiceController= require ('../controllers/ServiceController');
+ 
 
-var service = require('../models/service');
+router.post('/CompareByPriceAssc', ServiceController.CompareByPriceAssc);
+
+router.post('/CompareByPriceDesc', ServiceController.CompareByPriceDesc);
 
 
-module.exports = router;
+module.exports = router;*/
