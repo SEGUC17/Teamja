@@ -1,0 +1,24 @@
+<h2> Services</h2>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+<div class="row work-list">
+
+<button ng-click="Home()">Home</button></td>
+<div class="col-md-4" data-ng-repeat="work in works" >
+
+
+
+<h2>Title:{{work.Title }}</h2>
+
+<p>
+<span class="label label-warning availability">Price:{{work.Price}}</span>
+ <a href={{work.VideoURL}}> VideoUrRl:{{work.VideoURL}}</a>
+<td><button ng-click="update(work._id)">Edit</button></td>
+ <td><button class="btn btn-danger" ng-click="delete(work._id)">Remove</button></td>
+</p>
+
+
+</div>
+</div>
+</div>

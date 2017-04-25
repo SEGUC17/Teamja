@@ -1,0 +1,14 @@
+
+<h2> Services</h2>
+
+<div class="">
+<div class="row work-list">
+<td><button  class="btn btn-warning" ng-click="sortAscending()">Sort Ascending</button></td>
+ <td><button class="btn btn-danger" ng-click="sortDescending()">Sort Descending</button></td>
+
+<div class="col-md-4" data-ng-repeat="post in posts">
+<h2>{{post.Title }}, {{post.Price}}</h2>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+<div class="row work-list">
+<button ng-click="promotion()">Upcoming Events</button></td>
+<button ng-click="Search()">Search by Company Name/signup</button></td>
+<button ng-click="CustomerUser()">Customer Login/signup</button></td>
+<button ng-click="CompanyUser()">Company Login/signup</button></td>
+<button ng-click="Compare()">Compare Services/signup</button></td>
+<div class="col-md-4" data-ng-repeat="work in works" >
+
+
+
+<h2>Service:{{work.Title }}</h2>
+
+<p>
+<span class="label label-warning availability">Price:{{work.Price}}</span>
+ <a href={{work.VideoURL}}> VideoUrRl:{{work.VideoURL}}</a>
+ 
+ 
+<td><button ng-click="rate(work.Title)">AddRate</button></td>
+
+<td><button ng-click="review(work.Title)">Add Review</button></td>
+
+<td><button ng-click="viewrate(work.Title)">ViewRate</button></td>
+
+<td><button ng-click="viewreview(work.Title)"> View Review</button></td>
+
+</p>
+
+
+</div>
+</div>
+</div>

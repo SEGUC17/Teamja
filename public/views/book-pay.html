@@ -1,0 +1,16 @@
+<h2> Services</h2>
+
+<div class="">
+<div class="row work-list">
+<div class="col-md-4" data-ng-repeat="work in works" >
+<h2>{{work.Title }}</h2>
+
+<p>
+<span class="label label-warning availability">{{work.Price}}</span>
+<td><button ng-click="book(work._id)">Book</button></td>
+<td><button ng-click="Pay(work.Price)">Pay</button></td>
+
+</p>
+</div>
+</div>
+</div>

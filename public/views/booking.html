@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <strong> Username </strong>
+            <input type="text" ng-model="booked.theusername" class="form-control">
+        </div>
+        <div class="row">
+            <strong> Phonenumber</strong>
+            <input type="text" ng-model="booked.phonenumber" class="form-control">
+        </div>
+        <div class="row">
+         <strong> Time :Please Enter in  format like "dd/mm/yyyy" to ensure confrimtaion of your booking</strong>
+            <input type="text" ng-model="booked.Time" class="form-control" required>
+        </div>
+
+
+        <button ng-click="book()">Submit</button>
+    </div>
