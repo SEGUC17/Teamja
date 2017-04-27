@@ -20,6 +20,18 @@ $rootScope.Title=Title;
 
         }
 
+
+
+$scope.Pay = function(id){
+$rootScope.id=id;
+     $state.go('offline', { reload: true });
+     
+ 
+  
+
+        }
+
+
 $scope.viewrate = function(Title){
 $rootScope.Title=Title;
      $state.go('getrating', { reload: true });

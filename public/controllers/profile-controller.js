@@ -18,6 +18,17 @@ $scope.Username=$rootScope.User;
 
 
 
+        $scope.Change= function(){
+         
+  
+$state.go('change', { reload: true });
+           }
+
+
+
+
+
+
   
         $scope.addPromotion = function(){
          

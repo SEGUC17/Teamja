@@ -3,6 +3,42 @@ let Work = require('../Models/Work');
 
 let CompanyController = {
 
+
+
+
+
+
+
+Change:function(req, res){
+
+
+  
+
+   var x=req.params.Username;
+
+     
+
+     var image =req.body.Image;
+        
+     Company.findOneAndUpdate({Username:x},{Image:image} ,function (err, Work) {
+         
+            if (err){
+                 return console.error(err);
+            }
+            
+        });
+
+    
+}
+,
+
+
+
+
+
+
+
+
  search1:function(req, res){
         console.log("ana fel search");
 

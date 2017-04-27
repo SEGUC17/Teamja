@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <strong> Name: </strong>
+            <input type="text" ng-model="newUser.Username" class="form-control">
+        </div>
+        <div class="row">
+            <strong>Address</strong>
+            <input type="text" ng-model="newUser.Address" class="form-control">
+        </div>
+
+        <div class="row">
+            <strong>Time for Collector visit  Please enter in this format 11/8/1994  5 pm</strong>
+            <input type="text" ng-model="newUser.TimeC" class="form-control">
+        </div>
+        
+        <div class="row">
+            <strong>Time  you need to Book      Please enter in this format 11/8/1994  5 pm</strong>
+            <input type="text" ng-model="newUser.TimeB" class="form-control">
+        </div>
+
+   <div class="row">
+            <strong>Phonenumber</strong>
+            <input type="text" ng-model="newUser.Phonenumber" class="form-control">
+        </div>
+
+
+ <div class="row">
+            <strong>Deposit or ampunt to be collected</strong>
+            <input type="text" ng-model="newUser.Amount" class="form-control">
+        </div>
+
+        <button ng-click="Pay()">Submit</button>
+    </div>

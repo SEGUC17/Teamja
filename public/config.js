@@ -5,6 +5,18 @@
             
             $urlRouterProvider.otherwise('/');
           $stateProvider
+.state('change', {
+                url: "/updateprofilepicture",
+                templateUrl: "views/change-pic.html",
+                controller: "Change"
+            })
+
+
+.state('offline', {
+                url: "/offline",
+                templateUrl: "views/Payandbookoffline.html",
+                controller: "PayOffline"
+            })
 
 
 .state('loghome', {
