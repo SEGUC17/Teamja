@@ -10,7 +10,7 @@
 .state('loghome', {
                 url: "/loghome",
                 templateUrl: "views/loggedinhome.html",
-                controller: "PayController"
+                controller: "logController"
             })
 
 
