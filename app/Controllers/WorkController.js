@@ -56,7 +56,7 @@ Work.find({}, [], {sort: {Price: -1}},function(err, posts) {
        let   trial = new  Work();
      
   
-        trial.VideoURl= req.body.VideoURl;
+        trial.VideoURL= req.body.VideoURL;
        trial.Price=req.body.Price;
         trial.Title= req.body.Title;
         var pass=req.params.Username;
