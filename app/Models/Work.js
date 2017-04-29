@@ -7,7 +7,7 @@ var WorkSchema = mongoose.Schema({
         unique:true
     },
    VideoURL:String,
-   Image: { data: Buffer, contentType: String },
+   Image: String,
    Price:String,
    Username:String,
 Company_id:[{type:mongoose.Schema.Types.ObjectId, ref:'Company'}]

@@ -34,15 +34,28 @@ Work.find({}, [], {sort: {Price: -1}},function(err, posts) {
         
        var x=req.params.Username; 
         Work.find({Username:x},function(err, works){
-            
-              console.log(works);
+           
                 res.json(works);
             
         })
     }
   
 ,
-    getAllWork:function(req, res){
+ 
+
+getWork:function(req, res){
+    
+       var y=req.body.Title; 
+         var pass=req.params.Username;
+        Work.findOne({Title:y, Username:pass},function(err, work){
+            
+              console.log(work);
+                res.json(work);
+            
+        })
+    },
+
+   getAllWork:function(req, res){
         
         Work.find({},function(err, works){
             
@@ -61,7 +74,7 @@ Work.find({}, [], {sort: {Price: -1}},function(err, posts) {
         trial.Title= req.body.Title;
         var pass=req.params.Username;
               trial.Username=pass;
-
+trial.Image=req.body.Image;
 
 
 Company.findOne( {Username:pass},function(err, company){

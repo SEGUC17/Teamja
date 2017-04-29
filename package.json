@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "angular-stripe": "^4.2.13"
   },
   "devDependencies": {},
   "scripts": {

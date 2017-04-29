@@ -28,6 +28,16 @@ $state.go('Payview', { reload: true });
 
         }
 
+ $scope.Viewbook= function(){
+         
+    
+            	
+$state.go('MyBookings', { reload: true });
+           
+
+       
+
+        }
 
 
         

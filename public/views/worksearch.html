@@ -1,0 +1,22 @@
+  
+
+<button ng-click="Home()">Home</button></td>
+   <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            <strong> Search: </strong>
+            <input type="text" ng-model="x.Title" class="form-control">
+        
+       <button ng-click="searchng()">Search</button></div>
+        <div>
+            <h2>Title:{{work.Title }}</h2>
+
+
+<span class="label label-warning availability">Price:{{work.Price}}</span>
+ <a href={{work.VideoURL}}> VideoURl:{{work.VideoURL}}</a>
+<td><button ng-click="update(work._id)">Edit</button></td>
+ <td><button class="btn btn-danger" ng-click="delete(work._id)">Remove</button></td>
+
+
+        </div>
+ 

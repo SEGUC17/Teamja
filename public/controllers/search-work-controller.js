@@ -1,23 +1,19 @@
-
- (function(){
+(function(){
     angular.module('startup')
-.controller('ViewController', ['$scope','$rootScope' ,'$state', '$http', function($scope, $rootScope,$state, $http){
+.controller('SearchWork', ['$scope','$rootScope', '$state', '$http', function($scope, $rootScope,$state, $http){
+  
+        $scope.searchng = function(){
 
-
- 
-$rootScope.id="";
-
- $http.post('/workview/'+$rootScope.User).success(function(response){
-               
-
-
-        $scope.works=response;
-
-                
-            
+            $http.post('/swork/'+$rootScope.User, $scope.x).success(function(response){
+      
+            $scope.work=response;
             }).error(function(error){
                 console.log(error);
-            })
+            });
+         
+        };
+
+
 
 
 
@@ -27,13 +23,7 @@ $scope.Home = function(){
             
         }
 
-          
-      $scope.Booking= function(id){
-          $rootScope.id=id;
-  
-$state.go('viewBooking', { reload: true });
-           }
-  
+            
 
 
 $scope.update = function(id){
@@ -61,5 +51,18 @@ $rootScope.deleteid=id;
 
 
 
-   }]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }]);
 }());

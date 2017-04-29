@@ -9,8 +9,11 @@ var update =require('./Controllers/update');
 var deletefunc = require('./Controllers/delete');
 
 var booking =require('./Controllers/booking');
-router.post('/booking/:id', booking.book);
+router.post('/booking/:id/:Username', booking.book);
 
+
+router.post('/Mybooking/:Username', booking.getMyBook);
+router.post('/viewbooking/:id', booking.getBook);
 var PromotionController = require('./Controllers/promotionController');
 var RatingController = require('./Controllers/ratingController');
 var PromotionController = require('./Controllers/promotionController');
@@ -23,7 +26,9 @@ router.post('/getreview/:Title', ReviewController.getAllReviews);
 router.post('/getrating/:Title', RatingController.getAllRatings);
 
 
-router.post('/searchng',CompanyController.search1);
+
+
+router.post('/search',CompanyController.Search);
 
 router.post('/CompareByPriceAssc', WorkController.CompareByPriceAssc);
 
@@ -35,6 +40,9 @@ router.post('/getpromotion', PromotionController.getAllPromotions);
 
 
  router.post('/workview', WorkController.getAllWork);
+
+
+ router.post('/swork/:Username', WorkController.getWork);
 
 router.post('/offline/:id',PaymentController.Payment);
 

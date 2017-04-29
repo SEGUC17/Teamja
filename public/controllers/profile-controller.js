@@ -27,6 +27,12 @@ $state.go('change', { reload: true });
 
 
 
+        $scope.search= function(){
+         
+  
+$state.go('work-search', { reload: true });
+           }
+
 
 
   

@@ -4,7 +4,7 @@
         
         $scope.book = function(){
 
-            $http.post('/booking/' + $rootScope.id, $scope.booked).success(function(response){
+            $http.post('/booking/' + $rootScope.id+'/'+$rootScope.name, $scope.booked).success(function(response){
                $scope.booked=response;
             }).error(function(error){
                 console.log(error);

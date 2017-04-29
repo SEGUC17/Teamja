@@ -33,9 +33,31 @@ Change:function(req, res){
 ,
 
 
+Search:function(req,res){
+
+User=req.body.User;
+
+
+ Company.findOne({Username:User},function(err,Company){
+     if(!Company){
+     
+  
+res.status(500).send(errorMsg);
+
+                ;}
+            else{
+              console.log(Company);
+                res.json(Company);
+          
+        
+            }
+        })
 
 
 
+}
+
+,
 
 
 
@@ -50,9 +72,9 @@ Change:function(req, res){
                     console.error();
                     res.send(err.message);
                 }
-                else
-                    
-                    res.json({searchresults, pagetitle: "Home", user : req.user, search: req.query.search});
+                else{
+                    console.log(searchresults);
+                    res.json({searchresults, pagetitle: "Home", user : req.user, search: req.query.search});}
             });
 
         } else{
@@ -62,9 +84,9 @@ Change:function(req, res){
           Work.find(function(err, searchresults) {
                  if(err)
                     res.send(err.message);
-                else
-                    
-                    res.json({searchresults, pagetitle: "Home", user : req.user,search: req.query.search});
+                else{
+                       console.log(searchresults);
+                    res.json({searchresults, pagetitle: "Home", user : req.user,search: req.query.search});}
             });
 
         }

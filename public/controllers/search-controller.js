@@ -4,7 +4,7 @@
         
         $scope.searchng = function(searchelement){
  
-            $http.post('/searchng', searchelement).success(function(response){
+            $http.post('/search', $scope.x).success(function(response){
       
             $scope.compys=response;
             }).error(function(error){

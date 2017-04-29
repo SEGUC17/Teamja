@@ -2,9 +2,35 @@
 (function(){
     angular.module('startup', ['ui.router'])
             .config(function($stateProvider, $urlRouterProvider){
-            
+
+    
+
+
+
             $urlRouterProvider.otherwise('/');
-          $stateProvider
+  $stateProvider
+
+
+
+.state('MyBookings', {
+                url: "/MyBooking",
+                templateUrl: "views/mybooking.html",
+                controller: "MyBooking"
+            })
+
+.state('viewBooking', {
+                url: "/viewBooking",
+                templateUrl: "views/viewBooking.html",
+                controller: "ViewBooking"
+            })
+
+
+.state('work-search', {
+                url: "/work-search",
+                templateUrl: "views/worksearch.html",
+                controller: "SearchWork"
+            })
+
 .state('change', {
                 url: "/updateprofilepicture",
                 templateUrl: "views/change-pic.html",

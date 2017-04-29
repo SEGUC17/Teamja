@@ -12,7 +12,7 @@ var bookingSchema = mongoose.Schema({
        
     }
     ,
-
+Username:String,
    phonenumber:String,
    
    primarykey:{type:String,
