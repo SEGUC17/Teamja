@@ -5,7 +5,7 @@
 
 
 
- $http.post('/Mybooking/'+$rootScope.User).success(function(response){
+ $http.post('/Mybooking/'+$rootScope.name).success(function(response){
                
 
 
